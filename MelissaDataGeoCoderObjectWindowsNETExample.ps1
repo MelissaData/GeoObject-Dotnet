@@ -19,7 +19,7 @@ class DLLConfig {
 
 ######################### Config ###########################
 
-$RELEASE_VERSION = '2022.06' # modify for other release versions. For example: '2021.07'
+$RELEASE_VERSION = '2022.07'
 $ProductName = "GEOCODER_DATA"
 
 # Uses the location of the .ps1 file 

@@ -31,7 +31,7 @@ For Canada:
 
 - Windows 64-bit .NET Core 3.1
 - Powershell 5.1
-- Melissa data files for 2022-06
+- Melissa data files for 2022-07
 
 ----------------------------------------
 
