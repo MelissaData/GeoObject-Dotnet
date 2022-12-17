@@ -4,7 +4,7 @@ using System.Reflection;
 using MelissaData;
 using System.Net;
 
-namespace MelissaDataGeoCoderObjectWindowsNETExample
+namespace MelissaDataGeoCoderObjectWindowsNETSample
 {
   class Program
   {
@@ -49,7 +49,7 @@ namespace MelissaDataGeoCoderObjectWindowsNETExample
 
     static void RunAsConsole(string license, string testZip, string dataPath)
     {
-      Console.WriteLine("\n\n===== WELCOME TO MELISSA DATA GEOCODER OBJECT WINDOWS NET EXAMPLE =====\n");
+      Console.WriteLine("\n\n===== WELCOME TO MELISSA DATA GEOCODER OBJECT WINDOWS NET SAMPLE =====\n");
 
       GeoObject geoObject = new GeoObject(license, dataPath);
 
@@ -131,7 +131,6 @@ namespace MelissaDataGeoCoderObjectWindowsNETExample
           }
         }
       }
-
       Console.WriteLine("\n========= THANK YOU FOR USING MELISSA DATA NET OBJECT ========\n");
     }
   }
@@ -155,20 +154,7 @@ namespace MelissaDataGeoCoderObjectWindowsNETExample
       mdGeoObj.SetPathToGeoCanadaDataFiles(dataFilePath);
       mdGeoObj.SetPathToGeoPointDataFiles(dataFilePath);
 
-      /**
-       * DatabaseDate is the date of your data files. The data files should be one month behind the DQT release.  
-       * If you are using the 2020-10-15 release, the DatabaseDate should be 2020-09-15.
-       * 
-       * If you see a different date either download the new data files or use the Melissa Updater program to
-       * update your data files. 
-       * 
-       * If 1970-00-00 is the DatabaseDate, the GeoCoder Object was unable to reach the data files.
-       * 
-       * ---------------------------READING THIS MAY SAVE YOU HOURS OF YOUR TIME-------------------------------
-       * If the DatabaseDate is not consistent with the data files and your are having issues getting results
-       * using mdGeo, it is likely a license string issue and yours may have expired.
-       */
-
+      // If you see a different date than expected, check your license string and either download the new data files or use the Melissa Updater program to update your data files.  
       mdGeo.ProgramStatus pStatus = mdGeoObj.InitializeDataFiles();
 
       if (pStatus != mdGeo.ProgramStatus.ErrorNone)
@@ -182,7 +168,7 @@ namespace MelissaDataGeoCoderObjectWindowsNETExample
       Console.WriteLine($"              Expiration Date: {mdGeoObj.GetLicenseExpirationDate()}");
 
       /**
-       * This number should match with file properties of the mdGeo.dll File Version.
+       * This number should match with file properties of the Melissa Data Object binary file.
        * If TEST appears with the build number, there may be a license key issue.
        */
       Console.WriteLine($"               Object Version: {mdGeoObj.GetBuildNumber()}\n");
@@ -198,7 +184,7 @@ namespace MelissaDataGeoCoderObjectWindowsNETExample
 
       // ResultsCodes explain any issues geoCoder object has with the object.
       // List of result codes for GeoCoder object
-      // https://wiki.melissadata.com/index.php?title=Result_Code_Details#GeoCoder_Object
+      // https://wiki.melissadata.com/?title=Result_Code_Details#GeoCoder_Object
     }
   }
 

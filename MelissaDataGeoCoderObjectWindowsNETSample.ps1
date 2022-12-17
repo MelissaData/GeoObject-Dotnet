@@ -1,5 +1,5 @@
 # Name:    MelissaDataGeoCoderObjectWindowsNET
-# Purpose: Use the MelissaUpdater to make the MelissaDataGeoCoderObjectWindowsNET example usable
+# Purpose: Use the MelissaUpdater to make the MelissaDataGeoCoderObjectWindowsNET sample usable
 
 ######################### Parameters ##########################
 
@@ -19,20 +19,21 @@ class DLLConfig {
 
 ######################### Config ###########################
 
-$RELEASE_VERSION = '2022.11'
+$RELEASE_VERSION = '2022.12'
 $ProductName = "GEOCODER_DATA"
 
 # Uses the location of the .ps1 file 
 # Modify this if you want to use 
 $CurrentPath = $PSScriptRoot
 Set-Location $CurrentPath
-$ProjectPath = "$CurrentPath\MelissaDataGeoCoderObjectWindowsNETExample"
-$DataPath = Join-Path -Path $ProjectPath -ChildPath 'Data'
+$ProjectPath = "$CurrentPath\MelissaDataGeoCoderObjectWindowsNETSample"
+$DataPath = "$ProjectPath\Data"
+$BuildPath = "$ProjectPath\Build"
 
 If (!(Test-Path $DataPath)) {
   New-Item -Path $ProjectPath -Name 'Data' -ItemType "directory"
 }
-If (!(Test-Path $ProjectPath\Build)) {
+If (!(Test-Path $BuildPath)) {
   New-Item -Path $ProjectPath -Name 'Build' -ItemType "directory"
 }
 
@@ -71,14 +72,14 @@ function DownloadDLLs() {
 
     # Check for quiet mode
     if ($quiet) {
-      .\MelissaUpdater\MelissaUpdater.exe file --filename $DLL.FileName --release_version $DLL.ReleaseVersion --license $LICENSE --os $DLL.OS --compiler $DLL.Compiler --architecture $DLL.Architecture --type $DLL.Type --target_directory $ProjectPath\Build > $null
+      .\MelissaUpdater\MelissaUpdater.exe file --filename $DLL.FileName --release_version $DLL.ReleaseVersion --license $LICENSE --os $DLL.OS --compiler $DLL.Compiler --architecture $DLL.Architecture --type $DLL.Type --target_directory $BuildPath > $null
       if ($? -eq $false) {
         Write-Host "`nCannot run Melissa Updater. Please check your license string!"
         exit
       }
     }
     else {
-      .\MelissaUpdater\MelissaUpdater.exe file --filename $DLL.FileName --release_version $DLL.ReleaseVersion --license $LICENSE --os $DLL.OS --compiler $DLL.Compiler --architecture $DLL.Architecture --type $DLL.Type --target_directory $ProjectPath\Build 
+      .\MelissaUpdater\MelissaUpdater.exe file --filename $DLL.FileName --release_version $DLL.ReleaseVersion --license $LICENSE --os $DLL.OS --compiler $DLL.Compiler --architecture $DLL.Architecture --type $DLL.Type --target_directory $BuildPath 
       if ($? -eq $false) {
         Write-Host "`nCannot run Melissa Updater. Please check your license string!"
         exit
@@ -93,9 +94,9 @@ function DownloadDLLs() {
 function CheckDLLs() {
   Write-Host "`nDouble checking dll(s) were downloaded...`n"
   $FileMissing = $false 
-  if (!(Test-Path (Join-Path -Path $ProjectPath\Build -ChildPath "mdGeo.dll"))) {
+  if (!(Test-Path ("$BuildPath\mdGeo.dll"))) {
     Write-Host "mdGeo.dll not found." 
-    $FileMissing = $false
+    $FileMissing = $true
   }
   if ($FileMissing) {
     Write-Host "`nMissing the above data file(s).  Please check that your license string and directory are correct."
@@ -108,7 +109,7 @@ function CheckDLLs() {
 
 ########################## Main ############################
 
-Write-Host "`n=============== Example of Melissa Data GeoCoder Object ===============`n                    [ .NET | Windows | 64BIT ]`n"
+Write-Host "`n=============== Sample of Melissa Data GeoCoder Object ===============`n                    [ .NET | Windows | 64BIT ]`n"
 
 # Get license (either from parameters or user input)
 if ([string]::IsNullOrEmpty($license) ) {
@@ -137,6 +138,7 @@ DownloadDlls -license $License
 
 # Check if all dll(s) have been downloaded Exit script if missing
 $DLLsAreDownloaded = CheckDLLs
+
 if (!$DLLsAreDownloaded) {
   Write-Host "`nAborting program, see above.  Press any button to exit."
   $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
@@ -145,19 +147,20 @@ if (!$DLLsAreDownloaded) {
 
 Write-Host "All file(s) have been downloaded/updated!"
 
-# Start example
+# Start sample
 # Build project
 Write-Host "`n=========================== BUILD PROJECT =========================="
 
-# Target frameworks net5.0 and netcoreapp3.1
+# Target frameworks net6.0, net5.0, netcoreapp3.1
 # Please comment out the version that you don't want to use and uncomment the one that you do want to use
-#dotnet publish -f="net5.0" -c Release -o $ProjectPath\Build MelissaDataGeoCoderObjectWindowsNETExample\MelissaDataGeoCoderObjectWindowsNETExample.csproj
-dotnet publish -f="netcoreapp3.1" -c Release -o $ProjectPath\Build MelissaDataGeoCoderObjectWindowsNETExample\MelissaDataGeoCoderObjectWindowsNETExample.csproj
+dotnet publish -f="net6.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
+#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
+#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
 
 # Run project
 if ([string]::IsNullOrEmpty($zip)) {
-  dotnet $ProjectPath\Build\MelissaDataGeoCoderObjectWindowsNETExample.dll --license $License --dataPath $DataPath
+  dotnet $BuildPath\MelissaDataGeoCoderObjectWindowsNETSample.dll --license $License --dataPath $DataPath
 }
 else {
-  dotnet $ProjectPath\Build\MelissaDataGeoCoderObjectWindowsNETExample.dll --license $License --dataPath $DataPath --zip $zip
+  dotnet $BuildPath\MelissaDataGeoCoderObjectWindowsNETSample.dll --license $License --dataPath $DataPath --zip $zip
 }
