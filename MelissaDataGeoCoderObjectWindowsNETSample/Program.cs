@@ -79,22 +79,22 @@ namespace MelissaDataGeoCoderObjectWindowsNETSample
         }
 
         //Print user input 
-        Console.WriteLine("\n=========================== INPUTS ===========================\n");
-        Console.WriteLine($"\t               Zip: {dataContainer.Zip}");
+        Console.WriteLine("\n=============================== INPUTS ===============================\n");
+        Console.WriteLine($"\t                     Zip: {dataContainer.Zip}");
 
         // Execute GeoCoder Object
         geoObject.ExecuteObjectAndResultCodes(ref dataContainer);
 
         // Print Output
-        Console.WriteLine("\n=========================== OUTPUT ===========================\n");
+        Console.WriteLine("\n=============================== OUTPUT ===============================\n");
         Console.WriteLine("\n\tGeoCoder Object Information:");
-        Console.WriteLine($"\t                PlaceName: {geoObject.mdGeoObj.GetPlaceName()}");
-        Console.WriteLine($"\t                   County: {geoObject.mdGeoObj.GetCountyName()}");
-        Console.WriteLine($"\t    CountySubdivisionName: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
-        Console.WriteLine($"\t                 TimeZone: {geoObject.mdGeoObj.GetTimeZone()}");
-        Console.WriteLine($"\t                 Latitude: {geoObject.mdGeoObj.GetLatitude()}");
-        Console.WriteLine($"\t                Longitude: {geoObject.mdGeoObj.GetLongitude()}");
-        Console.WriteLine($"\tResult Codes: {dataContainer.ResultCodes}");
+        Console.WriteLine($"\t              PlaceName: {geoObject.mdGeoObj.GetPlaceName()}");
+        Console.WriteLine($"\t                 County: {geoObject.mdGeoObj.GetCountyName()}");
+        Console.WriteLine($"\t  CountySubdivisionName: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
+        Console.WriteLine($"\t               TimeZone: {geoObject.mdGeoObj.GetTimeZone()}");
+        Console.WriteLine($"\t               Latitude: {geoObject.mdGeoObj.GetLatitude()}");
+        Console.WriteLine($"\t              Longitude: {geoObject.mdGeoObj.GetLongitude()}");
+        Console.WriteLine($"\t           Result Codes: {dataContainer.ResultCodes}");
 
         String[] rs = dataContainer.ResultCodes.Split(',');
         foreach (String r in rs)
