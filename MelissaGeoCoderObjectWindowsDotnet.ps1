@@ -1,5 +1,5 @@
-# Name:    MelissaDataGeoCoderObjectWindowsNET
-# Purpose: Use the MelissaUpdater to make the MelissaDataGeoCoderObjectWindowsNET sample usable
+# Name:    MelissaGeoCoderObjectWindowsDotnet
+# Purpose: Use the MelissaUpdater to make the MelissaGeoCoderObjectWindowsDotnet code usable
 
 ######################### Parameters ##########################
 
@@ -26,7 +26,7 @@ $ProductName = "GEOCODER_DATA"
 # Modify this if you want to use 
 $CurrentPath = $PSScriptRoot
 Set-Location $CurrentPath
-$ProjectPath = "$CurrentPath\MelissaDataGeoCoderObjectWindowsNETSample"
+$ProjectPath = "$CurrentPath\MelissaGeoCoderObjectWindowsDotnet"
 $DataPath = "$ProjectPath\Data"
 $BuildPath = "$ProjectPath\Build"
 
@@ -109,7 +109,7 @@ function CheckDLLs() {
 
 ########################## Main ############################
 
-Write-Host "`n=============== Sample of Melissa Data GeoCoder Object ===============`n                    [ .NET | Windows | 64BIT ]`n"
+Write-Host "`n===================== Melissa GeoCoder Object =====================`n                    [ .NET | Windows | 64BIT ]`n"
 
 # Get license (either from parameters or user input)
 if ([string]::IsNullOrEmpty($license) ) {
@@ -136,7 +136,7 @@ DownloadDataFiles -license $License     # comment out this line if using DQS Rel
 # Download dll(s)
 DownloadDlls -license $License
 
-# Check if all dll(s) have been downloaded Exit script if missing
+# Check if all dll(s) have been downloaded. Exit script if missing
 $DLLsAreDownloaded = CheckDLLs
 
 if (!$DLLsAreDownloaded) {
@@ -147,21 +147,21 @@ if (!$DLLsAreDownloaded) {
 
 Write-Host "All file(s) have been downloaded/updated!"
 
-# Start sample
+# Start program
 # Build project
 Write-Host "`n=========================== BUILD PROJECT =========================="
 
 # Target frameworks net7.0, net6.0, net5.0, netcoreapp3.1
 # Please comment out the version that you don't want to use and uncomment the one that you do want to use
-dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
-#dotnet publish -f="net6.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
-#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
-#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaDataGeoCoderObjectWindowsNETSample\MelissaDataGeoCoderObjectWindowsNETSample.csproj
+dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
+#dotnet publish -f="net6.0" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
+#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
+#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
 
 # Run project
 if ([string]::IsNullOrEmpty($zip)) {
-  dotnet $BuildPath\MelissaDataGeoCoderObjectWindowsNETSample.dll --license $License --dataPath $DataPath
+  dotnet $BuildPath\MelissaGeoCoderObjectWindowsDotnet.dll --license $License --dataPath $DataPath
 }
 else {
-  dotnet $BuildPath\MelissaDataGeoCoderObjectWindowsNETSample.dll --license $License --dataPath $DataPath --zip $zip
+  dotnet $BuildPath\MelissaGeoCoderObjectWindowsDotnet.dll --license $License --dataPath $DataPath --zip $zip
 }
