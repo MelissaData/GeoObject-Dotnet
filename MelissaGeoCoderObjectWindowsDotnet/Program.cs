@@ -80,7 +80,7 @@ namespace MelissaGeoCoderObjectWindowsDotnet
 
         //Print user input 
         Console.WriteLine("\n=============================== INPUTS ===============================\n");
-        Console.WriteLine($"\t                     Zip: {dataContainer.Zip}");
+        Console.WriteLine($"\t                    Zip: {dataContainer.Zip}");
 
         // Execute GeoCoder Object
         geoObject.ExecuteObjectAndResultCodes(ref dataContainer);
@@ -88,10 +88,10 @@ namespace MelissaGeoCoderObjectWindowsDotnet
         // Print Output
         Console.WriteLine("\n=============================== OUTPUT ===============================\n");
         Console.WriteLine("\n\tGeoCoder Object Information:");
-        Console.WriteLine($"\t              PlaceName: {geoObject.mdGeoObj.GetPlaceName()}");
+        Console.WriteLine($"\t             Place Name: {geoObject.mdGeoObj.GetPlaceName()}");
         Console.WriteLine($"\t                 County: {geoObject.mdGeoObj.GetCountyName()}");
-        Console.WriteLine($"\t  CountySubdivisionName: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
-        Console.WriteLine($"\t               TimeZone: {geoObject.mdGeoObj.GetTimeZone()}");
+        Console.WriteLine($"\tCounty Subdivision Name: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
+        Console.WriteLine($"\t              Time Zone: {geoObject.mdGeoObj.GetTimeZone()}");
         Console.WriteLine($"\t               Latitude: {geoObject.mdGeoObj.GetLatitude()}");
         Console.WriteLine($"\t              Longitude: {geoObject.mdGeoObj.GetLongitude()}");
         Console.WriteLine($"\t           Result Codes: {dataContainer.ResultCodes}");
@@ -164,14 +164,14 @@ namespace MelissaGeoCoderObjectWindowsDotnet
         return;
       }
 
-      Console.WriteLine($"                DataBase Date: {mdGeoObj.GetDatabaseDate()}");
-      Console.WriteLine($"              Expiration Date: {mdGeoObj.GetLicenseExpirationDate()}");
+      Console.WriteLine($"                  DataBase Date: {mdGeoObj.GetDatabaseDate()}");
+      Console.WriteLine($"                Expiration Date: {mdGeoObj.GetLicenseExpirationDate()}");
 
       /**
        * This number should match with file properties of the Melissa Object binary file.
        * If TEST appears with the build number, there may be a license key issue.
        */
-      Console.WriteLine($"               Object Version: {mdGeoObj.GetBuildNumber()}\n");
+      Console.WriteLine($"                 Object Version: {mdGeoObj.GetBuildNumber()}\n");
     }
 
     // This will call the lookup function to process the input zip as well as generate the result codes
