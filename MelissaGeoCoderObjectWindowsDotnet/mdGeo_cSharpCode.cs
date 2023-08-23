@@ -56,118 +56,118 @@ namespace MelissaData {
 
 		[SuppressUnmanagedCodeSecurity]
 		private class mdGeoUnmanaged {
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoCreate", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoCreate", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoCreate();
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoDestroy", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoDestroy", CallingConvention = CallingConvention.Cdecl)]
 			public static extern void mdGeoDestroy(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetPathToGeoCodeDataFiles", CallingConvention = CallingConvention.Cdecl)]
-			public static extern void mdGeoSetPathToGeoCodeDataFiles(IntPtr i, string p1);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetPathToGeoPointDataFiles", CallingConvention = CallingConvention.Cdecl)]
-			public static extern void mdGeoSetPathToGeoPointDataFiles(IntPtr i, string p1);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetPathToGeoCanadaDataFiles", CallingConvention = CallingConvention.Cdecl)]
-			public static extern void mdGeoSetPathToGeoCanadaDataFiles(IntPtr i, string p1);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetLicenseString", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoSetLicenseString(IntPtr i, string License);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoInitialize", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoInitialize(IntPtr i, string DataPath, string IndexPath);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoInitializeDataFiles", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetPathToGeoCodeDataFiles", CallingConvention = CallingConvention.Cdecl)]
+			public static extern void mdGeoSetPathToGeoCodeDataFiles(IntPtr i, IntPtr p1);
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetPathToGeoPointDataFiles", CallingConvention = CallingConvention.Cdecl)]
+			public static extern void mdGeoSetPathToGeoPointDataFiles(IntPtr i, IntPtr p1);
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetPathToGeoCanadaDataFiles", CallingConvention = CallingConvention.Cdecl)]
+			public static extern void mdGeoSetPathToGeoCanadaDataFiles(IntPtr i, IntPtr p1);
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetLicenseString", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoSetLicenseString(IntPtr i, IntPtr License);
+			[DllImport("mdGeo", EntryPoint = "mdGeoInitialize", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoInitialize(IntPtr i, IntPtr DataPath, IntPtr IndexPath);
+			[DllImport("mdGeo", EntryPoint = "mdGeoInitializeDataFiles", CallingConvention = CallingConvention.Cdecl)]
 			public static extern Int32 mdGeoInitializeDataFiles(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetInitializeErrorString", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetInitializeErrorString", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetInitializeErrorString(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetBuildNumber", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetBuildNumber", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetBuildNumber(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetDatabaseDate", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetDatabaseDate", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetDatabaseDate(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetExpirationDate", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetExpirationDate", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetExpirationDate(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetLicenseExpirationDate", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetLicenseExpirationDate", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetLicenseExpirationDate(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetLatitude", CallingConvention = CallingConvention.Cdecl)]
-			public static extern void mdGeoSetLatitude(IntPtr i, string latitude);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetLongitude", CallingConvention = CallingConvention.Cdecl)]
-			public static extern void mdGeoSetLongitude(IntPtr i, string longitude);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoWriteToLogFile", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoWriteToLogFile(IntPtr i, string logFile);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGeoCode", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoGeoCode(IntPtr i, string Zip, string Plus4);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGeoPoint", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoGeoPoint(IntPtr i, string Zip, string Plus4, string DeliveryPointCode);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoComputeDistance", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetLatitude", CallingConvention = CallingConvention.Cdecl)]
+			public static extern void mdGeoSetLatitude(IntPtr i, IntPtr latitude);
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetLongitude", CallingConvention = CallingConvention.Cdecl)]
+			public static extern void mdGeoSetLongitude(IntPtr i, IntPtr longitude);
+			[DllImport("mdGeo", EntryPoint = "mdGeoWriteToLogFile", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoWriteToLogFile(IntPtr i, IntPtr logFile);
+			[DllImport("mdGeo", EntryPoint = "mdGeoGeoCode", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoGeoCode(IntPtr i, IntPtr Zip, IntPtr Plus4);
+			[DllImport("mdGeo", EntryPoint = "mdGeoGeoPoint", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoGeoPoint(IntPtr i, IntPtr Zip, IntPtr Plus4, IntPtr DeliveryPointCode);
+			[DllImport("mdGeo", EntryPoint = "mdGeoComputeDistance", CallingConvention = CallingConvention.Cdecl)]
 			public static extern double mdGeoComputeDistance(IntPtr i, double Latitude1, double Longitude1, double Latitude2, double Longitude2);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoComputeBearing", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoComputeBearing", CallingConvention = CallingConvention.Cdecl)]
 			public static extern double mdGeoComputeBearing(IntPtr i, double Latitude1, double Longitude1, double Latitude2, double Longitude2);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetErrorCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetErrorCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetErrorCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetStatusCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetStatusCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetStatusCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetResults", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetResults", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetResults(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetResultCodeDescription", CallingConvention = CallingConvention.Cdecl)]
-			public static extern IntPtr mdGeoGetResultCodeDescription(IntPtr i, string resultCode, Int32 opt);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetLatitude", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetResultCodeDescription", CallingConvention = CallingConvention.Cdecl)]
+			public static extern IntPtr mdGeoGetResultCodeDescription(IntPtr i, IntPtr resultCode, Int32 opt);
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetLatitude", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetLatitude(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetLongitude", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetLongitude", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetLongitude(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCensusTract", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCensusTract", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCensusTract(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCensusBlock", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCensusBlock", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCensusBlock(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCountyFips", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCountyFips", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCountyFips(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCountyName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCountyName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCountyName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetPlaceCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetPlaceCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetPlaceCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetPlaceName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetPlaceName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetPlaceName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetTimeZoneCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetTimeZoneCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetTimeZoneCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetTimeZone", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetTimeZone", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetTimeZone(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSACode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSACode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSACode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSATitle", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSATitle", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSATitle(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSALevel", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSALevel", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSALevel(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSADivisionCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSADivisionCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSADivisionCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSADivisionTitle", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSADivisionTitle", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSADivisionTitle(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCBSADivisionLevel", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCBSADivisionLevel", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCBSADivisionLevel(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetLastUsageLogMessage", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetLastUsageLogMessage", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetLastUsageLogMessage(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCensusKey", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCensusKey", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCensusKey(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCountySubdivisionCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCountySubdivisionCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCountySubdivisionCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetCountySubdivisionName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetCountySubdivisionName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetCountySubdivisionName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetElementarySchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetElementarySchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetElementarySchoolDistrictCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetElementarySchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetElementarySchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetElementarySchoolDistrictName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetSecondarySchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetSecondarySchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetSecondarySchoolDistrictCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetSecondarySchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetSecondarySchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetSecondarySchoolDistrictName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetStateDistrictLower", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetStateDistrictLower", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetStateDistrictLower(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetStateDistrictUpper", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetStateDistrictUpper", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetStateDistrictUpper(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetUnifiedSchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetUnifiedSchoolDistrictCode", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetUnifiedSchoolDistrictCode(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetUnifiedSchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetUnifiedSchoolDistrictName", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetUnifiedSchoolDistrictName(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetBlockSuffix", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetBlockSuffix", CallingConvention = CallingConvention.Cdecl)]
 			public static extern IntPtr mdGeoGetBlockSuffix(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoSetInputParameter", CallingConvention = CallingConvention.Cdecl)]
-			public static extern Int32 mdGeoSetInputParameter(IntPtr i, string key, string val);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoFindGeo", CallingConvention = CallingConvention.Cdecl)]
+			[DllImport("mdGeo", EntryPoint = "mdGeoSetInputParameter", CallingConvention = CallingConvention.Cdecl)]
+			public static extern Int32 mdGeoSetInputParameter(IntPtr i, IntPtr key, IntPtr val);
+			[DllImport("mdGeo", EntryPoint = "mdGeoFindGeo", CallingConvention = CallingConvention.Cdecl)]
 			public static extern void mdGeoFindGeo(IntPtr i);
-			[DllImport("mdGeo.dll", EntryPoint = "mdGeoGetOutputParameter", CallingConvention = CallingConvention.Cdecl)]
-			public static extern IntPtr mdGeoGetOutputParameter(IntPtr i, string key);
+			[DllImport("mdGeo", EntryPoint = "mdGeoGetOutputParameter", CallingConvention = CallingConvention.Cdecl)]
+			public static extern IntPtr mdGeoGetOutputParameter(IntPtr i, IntPtr key);
 		}
 
 		public mdGeo() {
@@ -186,23 +186,29 @@ namespace MelissaData {
 		}
 
 		public void SetPathToGeoCodeDataFiles(string p1) {
-			mdGeoUnmanaged.mdGeoSetPathToGeoCodeDataFiles(i, p1);
+			Utf8String u_p1 = new Utf8String(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoCodeDataFiles(i, u_p1.GetUtf8Ptr());
 		}
 
 		public void SetPathToGeoPointDataFiles(string p1) {
-			mdGeoUnmanaged.mdGeoSetPathToGeoPointDataFiles(i, p1);
+			Utf8String u_p1 = new Utf8String(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoPointDataFiles(i, u_p1.GetUtf8Ptr());
 		}
 
 		public void SetPathToGeoCanadaDataFiles(string p1) {
-			mdGeoUnmanaged.mdGeoSetPathToGeoCanadaDataFiles(i, p1);
+			Utf8String u_p1 = new Utf8String(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoCanadaDataFiles(i, u_p1.GetUtf8Ptr());
 		}
 
 		public bool SetLicenseString(string License) {
-			return (mdGeoUnmanaged.mdGeoSetLicenseString(i, License) != 0);
+			Utf8String u_License = new Utf8String(License);
+			return (mdGeoUnmanaged.mdGeoSetLicenseString(i, u_License.GetUtf8Ptr()) != 0);
 		}
 
 		public ProgramStatus Initialize(string DataPath, string IndexPath) {
-			return (ProgramStatus)mdGeoUnmanaged.mdGeoInitialize(i, DataPath, IndexPath);
+			Utf8String u_DataPath = new Utf8String(DataPath);
+			Utf8String u_IndexPath = new Utf8String(IndexPath);
+			return (ProgramStatus)mdGeoUnmanaged.mdGeoInitialize(i, u_DataPath.GetUtf8Ptr(), u_IndexPath.GetUtf8Ptr());
 		}
 
 		public ProgramStatus InitializeDataFiles() {
@@ -210,47 +216,57 @@ namespace MelissaData {
 		}
 
 		public string GetInitializeErrorString() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetInitializeErrorString(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetInitializeErrorString(i));
 		}
 
 		public string GetBuildNumber() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetBuildNumber(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetBuildNumber(i));
 		}
 
 		public string GetDatabaseDate() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetDatabaseDate(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetDatabaseDate(i));
 		}
 
 		public string GetExpirationDate() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetExpirationDate(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetExpirationDate(i));
 		}
 
 		public string GetLicenseExpirationDate() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetLicenseExpirationDate(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLicenseExpirationDate(i));
 		}
 
 		public void SetLatitude(string latitude) {
-			mdGeoUnmanaged.mdGeoSetLatitude(i, latitude);
+			Utf8String u_latitude = new Utf8String(latitude);
+			mdGeoUnmanaged.mdGeoSetLatitude(i, u_latitude.GetUtf8Ptr());
 		}
 
 		public void SetLongitude(string longitude) {
-			mdGeoUnmanaged.mdGeoSetLongitude(i, longitude);
+			Utf8String u_longitude = new Utf8String(longitude);
+			mdGeoUnmanaged.mdGeoSetLongitude(i, u_longitude.GetUtf8Ptr());
 		}
 
 		public bool WriteToLogFile(string logFile) {
-			return (mdGeoUnmanaged.mdGeoWriteToLogFile(i, logFile) != 0);
+			Utf8String u_logFile = new Utf8String(logFile);
+			return (mdGeoUnmanaged.mdGeoWriteToLogFile(i, u_logFile.GetUtf8Ptr()) != 0);
 		}
 
 		public int GeoCode(string Zip, string Plus4) {
-			return mdGeoUnmanaged.mdGeoGeoCode(i, Zip, Plus4);
+			Utf8String u_Zip = new Utf8String(Zip);
+			Utf8String u_Plus4 = new Utf8String(Plus4);
+			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr());
 		}
 
 		public int GeoCode(string Zip) {
-			return mdGeoUnmanaged.mdGeoGeoCode(i, Zip, "");
+			Utf8String u_Zip = new Utf8String(Zip);
+			Utf8String u_Plus4 = new Utf8String("");
+			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr());
 		}
 
 		public int GeoPoint(string Zip, string Plus4, string DeliveryPointCode) {
-			return mdGeoUnmanaged.mdGeoGeoPoint(i, Zip, Plus4, DeliveryPointCode);
+			Utf8String u_Zip = new Utf8String(Zip);
+			Utf8String u_Plus4 = new Utf8String(Plus4);
+			Utf8String u_DeliveryPointCode = new Utf8String(DeliveryPointCode);
+			return mdGeoUnmanaged.mdGeoGeoPoint(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr(), u_DeliveryPointCode.GetUtf8Ptr());
 		}
 
 		public double ComputeDistance(double Latitude1, double Longitude1, double Latitude2, double Longitude2) {
@@ -262,143 +278,147 @@ namespace MelissaData {
 		}
 
 		public string GetErrorCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetErrorCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetErrorCode(i));
 		}
 
 		public string GetStatusCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetStatusCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStatusCode(i));
 		}
 
 		public string GetResults() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetResults(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResults(i));
 		}
 
 		public string GetResultCodeDescription(string resultCode, ResultCdDescOpt opt) {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, resultCode, (int)opt));
+			Utf8String u_resultCode = new Utf8String(resultCode);
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetUtf8Ptr(), (int)opt));
 		}
 
 		public string GetResultCodeDescription(string resultCode) {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, resultCode, (int)ResultCdDescOpt.ResultCodeDescriptionLong));
+			Utf8String u_resultCode = new Utf8String(resultCode);
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetUtf8Ptr(), (int)ResultCdDescOpt.ResultCodeDescriptionLong));
 		}
 
 		public string GetLatitude() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetLatitude(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLatitude(i));
 		}
 
 		public string GetLongitude() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetLongitude(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLongitude(i));
 		}
 
 		public string GetCensusTract() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCensusTract(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusTract(i));
 		}
 
 		public string GetCensusBlock() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCensusBlock(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusBlock(i));
 		}
 
 		public string GetCountyFips() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCountyFips(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountyFips(i));
 		}
 
 		public string GetCountyName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCountyName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountyName(i));
 		}
 
 		public string GetPlaceCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetPlaceCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetPlaceCode(i));
 		}
 
 		public string GetPlaceName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetPlaceName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetPlaceName(i));
 		}
 
 		public string GetTimeZoneCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetTimeZoneCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetTimeZoneCode(i));
 		}
 
 		public string GetTimeZone() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetTimeZone(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetTimeZone(i));
 		}
 
 		public string GetCBSACode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSACode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSACode(i));
 		}
 
 		public string GetCBSATitle() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSATitle(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSATitle(i));
 		}
 
 		public string GetCBSALevel() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSALevel(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSALevel(i));
 		}
 
 		public string GetCBSADivisionCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSADivisionCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionCode(i));
 		}
 
 		public string GetCBSADivisionTitle() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSADivisionTitle(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionTitle(i));
 		}
 
 		public string GetCBSADivisionLevel() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCBSADivisionLevel(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionLevel(i));
 		}
 
 		public string GetLastUsageLogMessage() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetLastUsageLogMessage(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLastUsageLogMessage(i));
 		}
 
 		public string GetCensusKey() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCensusKey(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusKey(i));
 		}
 
 		public string GetCountySubdivisionCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCountySubdivisionCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountySubdivisionCode(i));
 		}
 
 		public string GetCountySubdivisionName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetCountySubdivisionName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountySubdivisionName(i));
 		}
 
 		public string GetElementarySchoolDistrictCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictCode(i));
 		}
 
 		public string GetElementarySchoolDistrictName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictName(i));
 		}
 
 		public string GetSecondarySchoolDistrictCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictCode(i));
 		}
 
 		public string GetSecondarySchoolDistrictName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictName(i));
 		}
 
 		public string GetStateDistrictLower() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetStateDistrictLower(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStateDistrictLower(i));
 		}
 
 		public string GetStateDistrictUpper() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetStateDistrictUpper(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStateDistrictUpper(i));
 		}
 
 		public string GetUnifiedSchoolDistrictCode() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictCode(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictCode(i));
 		}
 
 		public string GetUnifiedSchoolDistrictName() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictName(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictName(i));
 		}
 
 		public string GetBlockSuffix() {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetBlockSuffix(i));
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetBlockSuffix(i));
 		}
 
 		public bool SetInputParameter(string key, string val) {
-			return (mdGeoUnmanaged.mdGeoSetInputParameter(i, key, val) != 0);
+			Utf8String u_key = new Utf8String(key);
+			Utf8String u_val = new Utf8String(val);
+			return (mdGeoUnmanaged.mdGeoSetInputParameter(i, u_key.GetUtf8Ptr(), u_val.GetUtf8Ptr()) != 0);
 		}
 
 		public void FindGeo() {
@@ -406,7 +426,8 @@ namespace MelissaData {
 		}
 
 		public string GetOutputParameter(string key) {
-			return Marshal.PtrToStringAnsi(mdGeoUnmanaged.mdGeoGetOutputParameter(i, key));
+			Utf8String u_key = new Utf8String(key);
+			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetOutputParameter(i, u_key.GetUtf8Ptr()));
 		}
 
 		private class Utf8String : IDisposable {
