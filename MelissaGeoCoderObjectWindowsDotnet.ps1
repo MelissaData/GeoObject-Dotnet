@@ -208,7 +208,7 @@ Write-Host "All file(s) have been downloaded/updated!"
 # Build project
 Write-Host "`n=========================== BUILD PROJECT =========================="
 
-dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
+dotnet publish -f="net8.0" -c Release -o $BuildPath MelissaGeoCoderObjectWindowsDotnet\MelissaGeoCoderObjectWindowsDotnet.csproj
 
 # Run project
 if ([string]::IsNullOrEmpty($zip)) {
