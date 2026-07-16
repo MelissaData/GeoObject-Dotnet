@@ -80,8 +80,8 @@ The console will then prompt you with the following warning shown in the image b
 
 #### Download this project
 ```
-git clone https://git.melissadata.com/dtgroup/melissadataobjectexamples/net/melissadatageocoderobjectwindowsnetexample.git
-cd melissadatageocoderobjectwindowsnetexample
+git clone https://github.com/MelissaData/GeoObject-Dotnet
+cd GeoObject-Dotnet
 ```
 
 #### Set up Melissa Updater
